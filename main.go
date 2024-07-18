@@ -11,6 +11,11 @@ func main() {
 
 	flag.Parse()
 
+	if len(flag.Args()) < 1 {
+		fmt.Println("Enter a port number.")
+		return
+	}
+
 	if len(flag.Args()) == 1 {
 		fmt.Print("Listening on port: ")
 	} else {
