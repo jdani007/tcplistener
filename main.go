@@ -10,7 +10,11 @@ func main() {
     done := make(chan bool)
 
     flag.Parse()
-    fmt.Print("Listening on ports: ")
+    if len(flag.Args()) == 1 {
+        fmt.Print("Listening on port: ")
+    } else {
+        fmt.Print("Listening on ports: ")
+    }
     for _, port := range flag.Args() {
         fmt.Printf("%v ", port)
         go listen(port, done)
